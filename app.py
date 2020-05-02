@@ -36,7 +36,7 @@ def processRequest(req):
     #sessionID=req.get('responseId')
     result = req.get("queryResult")
     #user_says=result.get("queryText")
-    #log.write_log(sessionID, "User Says: "+user_says)
+    log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
     Petal_length=parameters.get("number")
     Petal_width = parameters.get("number1")
@@ -64,7 +64,7 @@ def processRequest(req):
             flowr = 'Virginica'
        
         fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         }
